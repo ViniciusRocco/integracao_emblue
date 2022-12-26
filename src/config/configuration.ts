@@ -3,7 +3,7 @@ export default () => ({
   isLocal: process.env.IS_LOCAL === 'true',
   timeoutapi: Number(process.env.TIMEOUT_API),
   configs: {
-    cronJob: process.env.CRON_SERVICE || '0 */2 * * *',
+    cronJob: process.env.CRON_SERVICE || '0 */1 * * *',
   },
   jet: {
     endpoint:
@@ -21,6 +21,6 @@ export default () => ({
     endpoint: 'https://api.embluemail.com',
     trackEndpoint: `https://track.embluemail.com`,
     trackAuthToken: process.env.TRACK_AUTH_TOKEN,
-    eventName: process.env.EMBLUE_EVENT_NAME || 'dadosjet',
+    eventName: process.env.EMBLUE_EVENT_NAME || 'Dados_Clintes',
   },
 });
