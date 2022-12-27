@@ -16,7 +16,7 @@ export default () => ({
   },
   emblue: {
     token: process.env.EMBLUE_TOKEN,
-    username: process.env.EMBLUE_USERNAME,
+    username: process.env.EMBLUE_USERNAME, 
     password: process.env.EMBLUE_PASSWORD,
     endpoint: 'https://api.embluemail.com',
     trackEndpoint: `https://track.embluemail.com`,
