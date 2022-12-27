@@ -21,6 +21,6 @@ export default () => ({
     endpoint: 'https://api.embluemail.com',
     trackEndpoint: `https://track.embluemail.com`,
     trackAuthToken: process.env.TRACK_AUTH_TOKEN,
-    eventName: process.env.EMBLUE_EVENT_NAME || 'Dados_Clintes',
+    eventName: process.env.EMBLUE_EVENT_NAME || 'Dados_Clientes',
   },
 });
