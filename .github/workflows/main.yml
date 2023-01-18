@@ -23,25 +23,24 @@ jobs:
         uses: actions/setup-node@v2
         with: 
           node-version: '16'
-
-      - name: 'Create env file'
-        run: |
-          touch .env
-          echo JET_ENDPOINT="${{ secrets.JET_ENDPOINT }}" >> .env
-          echo JET_USERNAME="${{ secrets.JET_USERNAME }}" >> .env
-          echo JET_PASSWORD="${{ secrets.JET_PASSWORD }}" >> .env
-          echo JET_INTEGRATION_KEY="${{ secrets.JET_INTEGRATION_KEY }}" >> .env
-          echo JET_STORE_ID="${{ secrets.JET_STORE_ID }}" >> .env
-          echo EMBLUE_TOKEN="${{ secrets.EMBLUE_TOKEN }}" >> .env
-          echo EMBLUE_USERNAME="${{ secrets.EMBLUE_USERNAME }}" >> .env    
-          echo EMBLUE_PASSWORD="${{ secrets.EMBLUE_PASSWORD }}" >> .env
-          echo EMBLUE_ENDPOINT="${{ secrets.EMBLUE_ENDPOINT }}" >> .env
-          echo EMBLUE_TRACKENDPOINT="${{ secrets.EMBLUE_TRACKENDPOINT }}" >> .env
-          echo TIMEOUT_API="${{ secrets.TIMEOUT_API }}" >> .env       
-          echo TRACK_AUTH_TOKEN="${{ secrets.TRACK_AUTH_TOKEN }}" >> .env      
-          echo EMBLUE_EVENT_NAME="${{ secrets.EMBLUE_EVENT_NAME }}" >> .env                                 
-          cat .env
           
+      # - name: 'Create env file'
+     #    run: |
+      #     touch .env
+      #     echo JET_ENDPOINT="${{ secrets.JET_ENDPOINT }}" >> .env
+     #      echo JET_USERNAME="${{ secrets.JET_USERNAME }}" >> .env
+     #      echo JET_PASSWORD="${{ secrets.JET_PASSWORD }}" >> .env
+    #       echo JET_INTEGRATION_KEY="${{ secrets.JET_INTEGRATION_KEY }}" >> .env
+    #       echo JET_STORE_ID="${{ secrets.JET_STORE_ID }}" >> .env
+     #      echo EMBLUE_TOKEN="${{ secrets.EMBLUE_TOKEN }}" >> .env
+      #     echo EMBLUE_USERNAME="${{ secrets.EMBLUE_USERNAME }}" >> .env    
+     #      echo EMBLUE_PASSWORD="${{ secrets.EMBLUE_PASSWORD }}" >> .env
+     #      echo EMBLUE_ENDPOINT="${{ secrets.EMBLUE_ENDPOINT }}" >> .env
+     #      echo EMBLUE_TRACKENDPOINT="${{ secrets.EMBLUE_TRACKENDPOINT }}" >> .env
+      #     echo TIMEOUT_API="${{ secrets.TIMEOUT_API }}" >> .env       
+      #     echo TRACK_AUTH_TOKEN="${{ secrets.TRACK_AUTH_TOKEN }}" >> .env      
+       #    echo EMBLUE_EVENT_NAME="${{ secrets.EMBLUE_EVENT_NAME }}" >> .env                                 
+       #    cat .env
       - run: npm i
 
       - name: rsync deployments
