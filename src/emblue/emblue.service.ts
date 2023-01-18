@@ -24,6 +24,7 @@ export class EmblueService {
     };
   }
 
+  
   public async getUser(emailid: string, token: string) {
     const listResponse = await this.httpService.post<Contato[]>(
       this.routes.list,
