@@ -14,7 +14,6 @@ export class EmblueService {
     const {
       emblue: { endpoint, trackEndpoint },
     } = configs();
-
     return {
       auth: `${endpoint}/Services/Emblue3Service.svc/json/Authenticate`,
       create: `${endpoint}/Services/EmBlue3Service.svc/Json/NewContact`,
@@ -303,7 +302,6 @@ export class EmblueService {
     const {
       emblue: { password, token, username },
     } = configs();
-
     const authResponse = await this.httpService.post<{ Token: string }>(
       this.routes.auth,
       {

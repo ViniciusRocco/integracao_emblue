@@ -27,6 +27,7 @@ export class JetController {
 
   private async run() {
     const { data: auth } = await this.jetService.auth();
+    console.log(auth);
     const { timeoutapi } = configuration();
 
     if (!auth.access_token) {
