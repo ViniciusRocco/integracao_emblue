@@ -23,6 +23,7 @@ export class JetService {
   }
 
   public async auth() {
+    console.log("teste1")
     try {
       const {
         jet: { password, username, storeID },
