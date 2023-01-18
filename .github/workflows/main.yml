@@ -24,8 +24,6 @@ jobs:
         with: 
           node-version: '16'
 
-      - run: npm i
-
       - name: 'Create env file'
         run: |
           touch .env
@@ -43,6 +41,8 @@ jobs:
           echo TRACK_AUTH_TOKEN="${{ secrets.TRACK_AUTH_TOKEN }}" >> .env      
           echo EMBLUE_EVENT_NAME="${{ secrets.EMBLUE_EVENT_NAME }}" >> .env                                 
           cat .env
+          
+      - run: npm i
 
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.1
