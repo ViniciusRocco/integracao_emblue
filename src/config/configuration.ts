@@ -1,6 +1,6 @@
 export default () => ({
   port: parseInt(process.env.PORT, 10) || 3000,
-  isLocal: process.env.IS_LOCAL === 'true',
+  isLocal: process.env.IS_LOCAL === 'false',
   timeoutapi: Number(process.env.TIMEOUT_API),
   configs: {
     cronJob: process.env.CRON_SERVICE || '* * * * *',
