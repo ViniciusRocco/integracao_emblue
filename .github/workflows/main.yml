@@ -23,9 +23,7 @@ jobs:
         uses: actions/setup-node@v2
         with: 
           node-version: '16'
-
-      - run: npm i
-
+    
       - name: 'Create env file'
         run: |
           touch .env
@@ -44,6 +42,10 @@ jobs:
           echo EMBLUE_EVENT_NAME="${{ secrets.EMBLUE_EVENT_NAME }}" >> .env                                 
           cat .env
 
+      - run: npm i
+
+      - run: ls -al
+        
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.1
         with:
