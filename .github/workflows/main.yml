@@ -39,7 +39,8 @@ jobs:
           echo EMBLUE_TRACKENDPOINT="${{ secrets.EMBLUE_TRACKENDPOINT }}" >> .env
           echo TIMEOUT_API="${{ secrets.TIMEOUT_API }}" >> .env       
           echo TRACK_AUTH_TOKEN="${{ secrets.TRACK_AUTH_TOKEN }}" >> .env      
-          echo EMBLUE_EVENT_NAME="${{ secrets.EMBLUE_EVENT_NAME }}" >> .env                                 
+          echo EMBLUE_EVENT_NAME="${{ secrets.EMBLUE_EVENT_NAME }}" >> .env
+          echo IS_LOCAL="${{ secrets.IS_LOCAL }}" >> .env                                   
           cat .env
           
       - name: rsync deployments
