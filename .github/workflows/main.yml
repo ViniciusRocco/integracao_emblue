@@ -25,24 +25,23 @@ jobs:
           node-version: '16'
     
       - name: 'Create env file'
-        uses: SpicyPizza/create-envfile@v1.3
-        with:          
-          envkey_JET_ENDPOINT: "${{ secrets.JET_ENDPOINT }}"
-          envkey_JET_USERNAME: "${{ secrets.JET_USERNAME }}"
-          envkey_JET_PASSWORD: "${{ secrets.JET_PASSWORD }}"
-          envkey_JET_INTEGRATION_KEY: "${{ secrets.JET_INTEGRATION_KEY }}"
-          envkey_JET_STORE_ID: "${{ secrets.JET_STORE_ID }}"
-          envkey_EMBLUE_TOKEN: "${{ secrets.EMBLUE_TOKEN }}"
-          envkey_EMBLUE_USERNAME: "${{ secrets.EMBLUE_USERNAME }}"    
-          envkey_EMBLUE_PASSWORD: "${{ secrets.EMBLUE_PASSWORD }}"
-          envkey_EMBLUE_ENDPOINT: "${{ secrets.EMBLUE_ENDPOINT }}"
-          envkey_EMBLUE_TRACKENDPOINT: "${{ secrets.EMBLUE_TRACKENDPOINT }}"
-          envkey_TIMEOUT_API: "${{ secrets.TIMEOUT_API }}"       
-          envkey_TRACK_AUTH_TOKEN: "${{ secrets.TRACK_AUTH_TOKEN }}"      
-          envkey_EMBLUE_EVENT_NAME: "${{ secrets.EMBLUE_EVENT_NAME }}"
-          envkey_IS_LOCAL: "${{ secrets.IS_LOCAL }}"                                   
-          directory: ./
-          fail_on_empty: true
+        run: |
+          touch .env
+          echo JET_ENDPOINT="${{ secrets.JET_ENDPOINT }}" >> .env
+          echo JET_USERNAME="${{ secrets.JET_USERNAME }}" >> .env
+          echo JET_PASSWORD="${{ secrets.JET_PASSWORD }}" >> .env
+          echo JET_INTEGRATION_KEY="${{ secrets.JET_INTEGRATION_KEY }}" >> .env
+          echo JET_STORE_ID="${{ secrets.JET_STORE_ID }}" >> .env
+          echo EMBLUE_TOKEN="${{ secrets.EMBLUE_TOKEN }}" >> .env
+          echo EMBLUE_USERNAME="${{ secrets.EMBLUE_USERNAME }}" >> .env    
+          echo EMBLUE_PASSWORD="${{ secrets.EMBLUE_PASSWORD }}" >> .env
+          echo EMBLUE_ENDPOINT="${{ secrets.EMBLUE_ENDPOINT }}" >> .env
+          echo EMBLUE_TRACKENDPOINT="${{ secrets.EMBLUE_TRACKENDPOINT }}" >> .env
+          echo TIMEOUT_API="${{ secrets.TIMEOUT_API }}" >> .env       
+          echo TRACK_AUTH_TOKEN="${{ secrets.TRACK_AUTH_TOKEN }}" >> .env      
+          echo EMBLUE_EVENT_NAME="${{ secrets.EMBLUE_EVENT_NAME }}" >> .env
+          echo IS_LOCAL="${{ secrets.IS_LOCAL }}" >> .env                                   
+          cat .env
           
       - name: rsync deployments
         uses: burnett01/rsync-deployments@5.1
@@ -57,3 +56,5 @@ jobs:
       - run: npm i
 
       - run: ls -al
+        
+
